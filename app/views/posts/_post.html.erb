@@ -1,0 +1,23 @@
+  
+   <div class="alert alert-info p-3 " role="alert">
+    <p><%= post.text%></p>
+    <hr>
+    <div class="container">
+    <div class="row"><% if user_signed_in? && current_user.id == post.user_id %>
+    <%=link_to current_user.nickname ,"users/#{current_user.id}", method:  :get ,:class =>'btn btn-info '%>
+    <%else%>
+     <%=link_to post.user.nickname ,"users/#{post.user_id}", method:  :get ,:class =>'btn btn-outline-info '%>
+     <%end%>
+    <div class="btn-group ml-auto " role="group" aria-label="Basic example ">  
+       
+              <%=link_to 'Show' ,"posts/#{post.id}", method:  :get ,:class =>'btn btn-info text-white'%>
+              <% if user_signed_in? && current_user.id == post.user_id %>
+            
+              <%=link_to 'Edit', "/posts/#{post.id}/edit", method: :get,:class =>'btn btn-info text-white'%>
+            
+              <%= link_to 'Delete', "/posts/#{post.id}/", method: :delete ,:class =>'btn btn-info text-white' %>
+              <% end %>
+      </div>
+      </div>
+      </div>
+      </div>

@@ -1,0 +1,29 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin bg-variant($parent, $color) {
+    #{$parent} {
+      background-color: $color !important;
+    }
+    a#{$parent},
+    button#{$parent} {
+      @include hover-focus {
+        background-color: darken($color, 10%) !important;
+      }
+    }
+  }
+  
+  @mixin bg-gradient-variant($parent, $color) {
+    #{$parent} {
+      background: $color linear-gradient(180deg, mix($body-bg, $color, 15%), $color) repeat-x !important;
+    }
+  }
+  .navbar-brand {
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.8rem;
+    line-height: inherit;
+    white-space: nowrap;
+}

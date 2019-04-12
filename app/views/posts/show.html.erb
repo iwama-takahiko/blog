@@ -1,0 +1,20 @@
+<div class="container" >
+   <div class="pt-5 pb-5 mt-4">
+   <div class="alert alert-info p-3  " role="alert">
+    <p><%=@posts.text%></p>
+    <hr>
+    <div class="container">
+    <div class="row">
+    <div class="btn-group ml-auto " role="group" aria-label="Basic example ">  
+              <% if user_signed_in? && current_user.id == @posts.user_id %>
+            
+              <%=link_to 'Edit', "/posts/#{@posts.id}/edit", method: :get,:class =>'btn btn-info text-white'%>
+            
+              <%= link_to 'Delete', "/posts/#{@posts.id}/", method: :delete ,:class =>'btn btn-info text-white' %>
+      </div>
+      </div>
+      </div>
+      </div>
+      <% end %>
+      </div>
+  </div>
