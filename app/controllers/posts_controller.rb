@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
     def create
      @posts=Post.new(text: post_params[:text], user_id: current_user.id)
+     binding.pry
      if @posts.save
       redirect_to :action => 'index'
      else
