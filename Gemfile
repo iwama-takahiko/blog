@@ -71,3 +71,14 @@ group :development, :test do
   gem 'pry-doc'
 end
 gem 'kaminari-bootstrap'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'jquery-rails'
+gem "font-awesome-rails"
+gem 'holder_rails'
+gem "aws-sdk-s3", require: false
+gem 'ratyrate'
+gem 'jquery-turbolinks'
+gem 'ransack'
+gem 'faker'
